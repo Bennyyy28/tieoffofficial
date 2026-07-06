@@ -39,6 +39,8 @@ fall through the cracks.
   confirms ask for one click to close.
 - **Closes the loop** — resolve, snooze, accept into a working set, copy a
   ready-to-paste follow-up prompt, or jump straight into the session file.
+- **Locks if you want it to** — optional Touch ID app lock, fitting for an
+  app that reads your session history.
 - **Feeds your agents back** — a built-in MCP server exposes your open loops as
   tools (`list_open_loops`, `get_loop`, `resolve_loop`, …), so Claude Code,
   Cursor, or any MCP harness can pull a loop, do the work, and mark it closed.

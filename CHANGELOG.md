@@ -26,6 +26,9 @@ The evidence release: the inbox now leads with what the repo can prove.
   opt-in, one-click skip) to append a short "session hygiene" block to your
   `CLAUDE.md`/`AGENTS.md` — rules like "commit before you report done" that
   make agents easier to audit and Tieoff's verification sharper.
+- **Optional Touch ID app lock.** Turn it on in Settings and Tieoff asks for
+  your fingerprint on launch — a sensible extra for an app whose whole job is
+  reading your session history.
 - **MCP connection status in the header**, and the theme toggle moved into
   Settings.
 
@@ -61,5 +64,5 @@ First release.
   harness and let your agents list, work, and resolve loops themselves.
 - **Local summaries**: uses Ollama when you have it, degrades to rule-based
   summaries when you don't; nothing leaves your machine.
-- **Native Mac app**: signed, notarized, auto-updating; optional Touch ID
-  app lock; guided first-run onboarding.
+- **Native Mac app**: signed, notarized, auto-updating, with guided
+  first-run onboarding.
