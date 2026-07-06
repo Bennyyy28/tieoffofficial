@@ -9,7 +9,7 @@ Tieoff surfaces the open loops your Codex and Claude Code agents leave behind �
 one calm, local inbox of unfinished work, so nothing falls through the cracks.
 
 [![Latest release](https://img.shields.io/github/v/release/Bennyyy28/tieoffofficial?label=download&color=blue)](https://github.com/Bennyyy28/tieoffofficial/releases/latest)
-&nbsp;·&nbsp; macOS (Apple Silicon) &nbsp;·&nbsp; local-first — your transcripts never leave your Mac
+&nbsp;·&nbsp; [what's new](CHANGELOG.md) &nbsp;·&nbsp; macOS (Apple Silicon) &nbsp;·&nbsp; local-first — your transcripts never leave your Mac
 
 <img src="docs/hero.png" alt="Tieoff — agents said done; the repo disagrees" width="820">
 
