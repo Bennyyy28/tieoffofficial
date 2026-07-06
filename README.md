@@ -144,6 +144,9 @@ Drag `Tieoff.app` to the Trash, then optionally:
 rm -rf "$HOME/Library/Application Support/Agent Activity"
 ```
 
+(The data folder keeps the app's pre-rename working name — intentional, so
+updates never lose your history. A rename with migration is planned.)
+
 If you accepted the onboarding hygiene snippet, it's a clearly-marked
 `## Session hygiene` block at the end of `~/.claude/CLAUDE.md` /
 `~/.codex/AGENTS.md` — delete it or keep it; it's useful with or without
