@@ -9,7 +9,7 @@ Tieoff surfaces the open loops your Codex and Claude Code agents leave behind �
 one calm, local inbox of unfinished work, so nothing falls through the cracks.
 
 [![Latest release](https://img.shields.io/github/v/release/Bennyyy28/tieoffofficial?label=download&color=blue)](https://github.com/Bennyyy28/tieoffofficial/releases/latest)
-&nbsp;·&nbsp; macOS (Apple Silicon) &nbsp;·&nbsp; local-first, your sessions never leave your Mac
+&nbsp;·&nbsp; macOS (Apple Silicon) &nbsp;·&nbsp; local-first — your transcripts never leave your Mac
 
 <img src="docs/hero.png" alt="Tieoff — agents said done; the repo disagrees" width="820">
 
@@ -56,14 +56,6 @@ Gatekeeper gymnastics. Auto-updates via the built-in updater.
 **Beta note:** 30-day full trial from first launch; after that the single-agent
 view stays free, cross-agent view + MCP tools need a license.
 
-## Local-first, by design
-
-Your session transcripts are the most sensitive files on your machine. Tieoff
-reads them locally, stores its state locally, and sends nothing anywhere.
-Summaries use a local model when you have one (Ollama detected automatically)
-and degrade gracefully to rule-based summaries when you don't. The repo checks
-are read-only git operations, allowlisted to exactly four commands.
-
 ## Connect your agents (MCP)
 
 Tieoff ships an MCP server so your harnesses can work the inbox themselves:
@@ -75,6 +67,84 @@ claude mcp add tieoff -- /Applications/Tieoff.app/Contents/Resources/mcp-bin/age
 
 Then: *"list my open loops"* → pick one → the agent does the work →
 `resolve_loop`. The GUI and MCP share one store, so everything stays in sync.
+
+## What Tieoff touches — read this if you're the skeptical type
+
+You should be skeptical: this app reads your agent transcripts, which are
+among the most sensitive files on your machine. Here is the complete surface,
+stated precisely.
+
+**Reads (local only):**
+
+- Claude Code session files (`~/.claude/projects/**`) and Codex session files
+  (`~/.codex/sessions/**`), auto-discovered; paths are configurable.
+- For reconciliation: **read-only** git state of repos your sessions worked
+  in — allowlisted to exactly four git read commands, scoped to the paths a
+  session claimed to touch. Tieoff never writes to, commits in, or executes
+  anything inside your repositories.
+
+**Writes (local only):**
+
+- Its own app-data folder (`~/Library/Application Support/Agent Activity/`):
+  loop statuses, summary cache, trial license, settings. Delete this folder
+  and Tieoff forgets everything.
+- One opt-in exception: onboarding *offers* to append a short "session
+  hygiene" block to `~/.claude/CLAUDE.md` / `~/.codex/AGENTS.md`. It's a
+  visible checkbox, append-only (your existing content is never modified),
+  and skippable in one click.
+
+**Network — the complete list:**
+
+| Call | When | Contains |
+|---|---|---|
+| Update check against this repo's releases | on launch | version number only |
+| `localhost` Ollama | only if you have Ollama installed | summary prompts (never leave your machine) |
+| `api.anthropic.com` | **only if you add your own API key** (off by default) | summary prompts, under your key |
+
+No telemetry, no analytics, no accounts, no server of ours. Your transcripts
+never leave your Mac. Summaries degrade gracefully to rule-based when no
+model is available — the app works fully offline.
+
+## Verify the build
+
+Every release is signed with a Developer ID certificate and notarized by
+Apple. Check for yourself after installing:
+
+```bash
+codesign --verify --deep --strict /Applications/Tieoff.app && echo "signature OK"
+spctl --assess --type execute /Applications/Tieoff.app && echo "Gatekeeper OK"
+xcrun stapler validate /Applications/Tieoff.app
+```
+
+## The MCP server's security model
+
+The bundled MCP server is a **ledger, not an executor**: it exposes your open
+loops as data (`list_open_loops`, `get_loop`, …) and records status changes
+in the shared local store. It never runs commands in your repositories, never
+shells out, and speaks plain stdio to the harness you attach it to. The build
+enforces this mechanically — the bundle is rejected if any process-execution
+call reaches it.
+
+## Source availability
+
+Tieoff's source is private during the beta; this repository hosts releases,
+release notes, and issues. Independent of source access, everything above is
+externally verifiable: signatures via `codesign`, network behavior via Little
+Snitch or `tcpdump` (you'll see the update check and nothing else), and file
+access via macOS's own prompts.
+
+## Uninstall
+
+Drag `Tieoff.app` to the Trash, then optionally:
+
+```bash
+rm -rf "$HOME/Library/Application Support/Agent Activity"
+```
+
+If you accepted the onboarding hygiene snippet, it's a clearly-marked
+`## Session hygiene` block at the end of `~/.claude/CLAUDE.md` /
+`~/.codex/AGENTS.md` — delete it or keep it; it's useful with or without
+Tieoff.
 
 ## Feedback
 
