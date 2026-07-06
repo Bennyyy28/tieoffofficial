@@ -11,7 +11,7 @@ one calm, local inbox of unfinished work, so nothing falls through the cracks.
 [![Latest release](https://img.shields.io/github/v/release/Bennyyy28/tieoffofficial?label=download&color=blue)](https://github.com/Bennyyy28/tieoffofficial/releases/latest)
 &nbsp;·&nbsp; macOS (Apple Silicon) &nbsp;·&nbsp; local-first, your sessions never leave your Mac
 
-<!-- SCREENSHOT: docs/hero.png — the tiered inbox, light mode. Add before Wave A. -->
+<img src="docs/hero.png" alt="Tieoff — agents said done; the repo disagrees" width="820">
 
 </div>
 
