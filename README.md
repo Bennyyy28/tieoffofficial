@@ -51,7 +51,8 @@ fall through the cracks.
 3. Onboarding finds your sessions and builds your first inbox in seconds.
 
 Requirements: macOS on Apple Silicon (M-series). Signed and notarized — no
-Gatekeeper gymnastics. Auto-updates via the built-in updater.
+Gatekeeper gymnastics. Auto-updates via the built-in updater. What's new in
+each version: [CHANGELOG](CHANGELOG.md).
 
 **Beta note:** 30-day full trial from first launch; after that the single-agent
 view stays free, cross-agent view + MCP tools need a license.
