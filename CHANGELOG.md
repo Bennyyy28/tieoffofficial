@@ -1,4 +1,13 @@
 
+
+<!-- releasenotes:insert -->
+
+## 0.1.8 — 2026-07-08
+
+- **Updates:** when a new version is available, the app now shows a "Later / Install Now" prompt and can install + relaunch in one click, instead of asking you to quit and reopen manually.
+- **Build visibility:** the Settings panel and `/api/health` now show the exact build (git SHA + build time), so you can confirm precisely which build you're running.
+
+
 # Changelog
 
 All notable changes to Tieoff, newest first. Download any release from the
