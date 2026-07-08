@@ -1,4 +1,7 @@
+# Changelog
 
+All notable changes to Tieoff, newest first. Download any release from the
+[Releases page](https://github.com/Bennyyy28/tieoffofficial/releases).
 
 <!-- releasenotes:insert -->
 
@@ -7,13 +10,26 @@
 - **Updates:** when a new version is available, the app now shows a "Later / Install Now" prompt and can install + relaunch in one click, instead of asking you to quit and reopen manually.
 - **Build visibility:** the Settings panel and `/api/health` now show the exact build (git SHA + build time), so you can confirm precisely which build you're running.
 
+## 0.1.7 — 2026-07-08
 
-# Changelog
+- **Settings:** now shows the current app version.
+- **Activity timeline:** your own messages are labeled "You" instead of a hard-coded name.
 
-All notable changes to Tieoff, newest first. Download any release from the
-[Releases page](https://github.com/Bennyyy28/tieoffofficial/releases).
+## 0.1.6 — 2026-07-08
 
-## v0.1.1 — 2026-07-06
+- **Settings:** now displays the current app version number.
+
+## 0.1.2 – 0.1.5 — beta maintenance (2026-07-07 – 08)
+
+A run of internal/beta iterations, grouped here for brevity:
+
+- **0.1.5:** the built-in auto-updater — the app checks for a newer version on launch and updates in place.
+- **0.1.3:** an in-progress Agents view was gated behind a flag (off in shipped builds).
+- **0.1.2:** inbox polish, clearer thread titles, and a leaner bundled MCP server.
+
+*(0.1.4 was an internal release-pipeline fix with no user-facing change.)*
+
+## 0.1.1 — 2026-07-06
 
 The evidence release: the inbox now leads with what the repo can prove.
 
@@ -59,7 +75,7 @@ The evidence release: the inbox now leads with what the repo can prove.
   of keeping a stale "Picked up" tag.
 - Resolving a loop from the project view updates the inbox counts correctly.
 
-## v0.1.0 — 2026-07-01
+## 0.1.0 — 2026-07-01
 
 First release.
 
