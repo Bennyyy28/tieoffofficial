@@ -5,6 +5,23 @@ All notable changes to Tieoff, newest first. Download any release from the
 
 <!-- releasenotes:insert -->
 
+## 0.1.9 — 2026-07-09
+
+- **The open beta has ended.** The cross-agent **"All"** view — the combined
+  Codex + Claude inbox, plus open-loop history and analytics — now requires a
+  license. It unlocked automatically during the beta; after this update it will
+  ask you to upgrade. The single-agent **Codex** and **Claude** views stay free,
+  and nothing you've resolved, snoozed, or dismissed is lost.
+- **Enter your license key in the app.** Settings now has a **License** section:
+  paste the `AA-…` key from your purchase to unlock the cross-agent view. It
+  shows your plan, your renewal date, and a masked copy of your key. Previously
+  there was nowhere to enter a key you'd paid for.
+- **Security:** hardened the read-only git integration against a hostile
+  `.git/config`, removed shell access from the app's webview, tightened the
+  local path checks, and validated more API input. No action needed.
+
+
+
 ## 0.1.8 — 2026-07-08
 
 - **Updates:** when a new version is available, the app now shows a "Later / Install Now" prompt and can install + relaunch in one click, instead of asking you to quit and reopen manually.
